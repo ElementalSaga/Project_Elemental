@@ -22,7 +22,7 @@ MonoBehaviour:
   havePassive: 0
   canUseAirial: 0
   activeSkills:
-  - {fileID: 11400000, guid: f35e46d89c979f343947f497f36505d4, type: 2}
+  - {fileID: 11400000, guid: 448d6fc298fca394a8912d66cd0a94f2, type: 2}
   passiveSkills: []
   releaseSkills: []
   activeType: 0

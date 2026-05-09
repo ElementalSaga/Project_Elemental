@@ -445,7 +445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3849367877708854717, guid: 5ad2f3352d7a00e4691d481b3eedbe90, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4198143601058091659, guid: 5ad2f3352d7a00e4691d481b3eedbe90, type: 3}
       propertyPath: m_IsActive
@@ -6688,8 +6688,8 @@ MonoBehaviour:
   hitBox: {fileID: 0}
   rigid: {fileID: 0}
   activeSkills:
-  - {fileID: 11400000, guid: 1660b3dbc3614fb478fe2d81ccd66da0, type: 2}
-  - {fileID: 11400000, guid: e3562308c3550f6409d247a261cd2eee, type: 2}
+  - {fileID: 11400000, guid: c468afff7f041154fb04a09cc7c2653a, type: 2}
+  - {fileID: 11400000, guid: 27add7a57bac1174fabb41e9026a9718, type: 2}
   - {fileID: 11400000, guid: 186fd0be3bb78b74a885f7c7d918d8f5, type: 2}
   - {fileID: 11400000, guid: 6bd5f5a97a403044b8a9c6481949c910, type: 2}
   passiveSkills:
