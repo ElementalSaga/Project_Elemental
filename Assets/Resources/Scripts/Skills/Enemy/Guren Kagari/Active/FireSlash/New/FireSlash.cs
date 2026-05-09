@@ -18,7 +18,7 @@ public class FireSlash : SkillBase
         dangerArea.transform.localPosition = dangerAreaPos;
 
         dangerArea.transform.localScale = new Vector2(dangerAreaSize.x * caster.GetDirection().x, dangerAreaSize.y); //길이 조정.
-        dangerArea.transform.parent.rotation = Quaternion.Euler(0, 0, 0);
+        //dangerArea.transform.parent.rotation = Quaternion.Euler(0, 0, 0);
 
         var dangerAreaCom = dangerArea.GetComponent<DangerArea>();
 

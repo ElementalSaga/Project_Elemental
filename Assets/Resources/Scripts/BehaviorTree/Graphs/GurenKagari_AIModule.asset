@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Name: Condition
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 552, y: -232}
+  position: {x: 552, y: -360}
   ports:
     keys:
     - parent
@@ -628,6 +628,10 @@ MonoBehaviour:
   - {fileID: -1198906419251241215}
   - {fileID: -2490827277642440165}
   - {fileID: -4502016718081794474}
+  - {fileID: 4807533264096823286}
+  - {fileID: 4932965216947859587}
+  - {fileID: 4094529453721453410}
+  - {fileID: 2854582391649774617}
   rootNode: {fileID: 721728505026563195}
   blackboard:
     entries:
@@ -637,7 +641,7 @@ MonoBehaviour:
       intVal: 0
       floatVal: 0
       boolVal: 0
-      vector3Val: {x: -1.68, y: -2.9268012, z: -0.1}
+      vector3Val: {x: -18.985008, y: -2.9268003, z: -0.1}
     - key: Melee_Distance
       type: 2
       stringVal: 
@@ -649,13 +653,20 @@ MonoBehaviour:
       type: 2
       stringVal: 
       intVal: 0
-      floatVal: 0
+      floatVal: 24.899704
       boolVal: 0
       vector3Val: {x: 0, y: 0, z: 0}
     - key: PatternIndex
       type: 1
       stringVal: 
-      intVal: 2
+      intVal: 0
+      floatVal: 0
+      boolVal: 0
+      vector3Val: {x: 0, y: 0, z: 0}
+    - key: Direction
+      type: 1
+      stringVal: 
+      intVal: -1
       floatVal: 0
       boolVal: 0
       vector3Val: {x: 0, y: 0, z: 0}
@@ -790,7 +801,7 @@ MonoBehaviour:
       _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
-      - fieldName: childs 1
+      - fieldName: childs 2
         node: {fileID: 6793653449044505126}
         reroutePoints: []
       _direction: 0
@@ -936,6 +947,48 @@ MonoBehaviour:
   intValue: 1
   boolValue: 0
   stringValue: 
+--- !u!114 &2854582391649774617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728853458f0eef14e8b9f4ff677b8706, type: 3}
+  m_Name: Control Direction
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 552, y: 40}
+  ports:
+    keys:
+    - parent
+    - parent 0
+    values:
+    - _fieldName: parent
+      _node: {fileID: 2854582391649774617}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent 0
+      _node: {fileID: 2854582391649774617}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: childs 1
+        node: {fileID: 6793653449044505126}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  parent: {fileID: 0}
+  directionKey: Direction
 --- !u!114 &3124417427229160673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -949,7 +1002,7 @@ MonoBehaviour:
   m_Name: Setting Distance
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 568, y: -488}
+  position: {x: 552, y: -488}
   ports:
     keys:
     - parent
@@ -1084,6 +1137,48 @@ MonoBehaviour:
   intValue: 0
   boolValue: 0
   stringValue: 
+--- !u!114 &4094529453721453410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7b7616d4ef7a994b8c652cf3964906a, type: 3}
+  m_Name: AI Movement
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 792, y: 1576}
+  ports:
+    keys:
+    - parent
+    - parent 0
+    values:
+    - _fieldName: parent
+      _node: {fileID: 4094529453721453410}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent 0
+      _node: {fileID: 4094529453721453410}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: childs 1
+        node: {fileID: 4807533264096823286}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  parent: {fileID: 0}
+  directionKey: Direction
 --- !u!114 &4633113747830089092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1135,6 +1230,126 @@ MonoBehaviour:
   intValue: 1
   boolValue: 0
   stateValue: 0
+--- !u!114 &4807533264096823286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d48bdd6e246dbf428f8eeaa67018a9b, type: 3}
+  m_Name: KagariMovement
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 424, y: 1416}
+  ports:
+    keys:
+    - childs
+    - parent
+    - parent 0
+    - childs 0
+    - childs 1
+    values:
+    - _fieldName: childs
+      _node: {fileID: 4807533264096823286}
+      _typeQualifiedName: System.Collections.Generic.List`1[[BTNode, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: 4807533264096823286}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent 0
+      _node: {fileID: 4807533264096823286}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: childs 0
+      _node: {fileID: 4807533264096823286}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: parent 0
+        node: {fileID: 4932965216947859587}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: childs 1
+      _node: {fileID: 4807533264096823286}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: parent 0
+        node: {fileID: 4094529453721453410}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  parent: {fileID: 0}
+  childs:
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &4932965216947859587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728853458f0eef14e8b9f4ff677b8706, type: 3}
+  m_Name: Control Direction
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 792, y: 1400}
+  ports:
+    keys:
+    - parent
+    - parent 0
+    values:
+    - _fieldName: parent
+      _node: {fileID: 4932965216947859587}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent 0
+      _node: {fileID: 4932965216947859587}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: childs 0
+        node: {fileID: 4807533264096823286}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  parent: {fileID: 0}
+  directionKey: Direction
 --- !u!114 &6793653449044505126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1148,7 +1363,7 @@ MonoBehaviour:
   m_Name: KagariPattern
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 296, y: -136}
+  position: {x: 296, y: -216}
   ports:
     keys:
     - childs
@@ -1156,6 +1371,7 @@ MonoBehaviour:
     - parent 0
     - childs 0
     - childs 1
+    - childs 2
     values:
     - _fieldName: childs
       _node: {fileID: 6793653449044505126}
@@ -1206,6 +1422,18 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: parent 0
+        node: {fileID: 2854582391649774617}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: childs 2
+      _node: {fileID: 6793653449044505126}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: parent 0
         node: {fileID: 2357306735696113186}
         reroutePoints: []
       _direction: 1
@@ -1214,6 +1442,7 @@ MonoBehaviour:
       _dynamic: 1
   parent: {fileID: 0}
   childs:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!114 &7562672163853538567
@@ -1226,7 +1455,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d48bdd6e246dbf428f8eeaa67018a9b, type: 3}
-  m_Name: Sequence
+  m_Name: FlameSlash
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: 824, y: 920}
@@ -1380,10 +1609,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d48bdd6e246dbf428f8eeaa67018a9b, type: 3}
-  m_Name: Sequence
+  m_Name: RollingSpin
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 824, y: 504}
+  position: {x: 808, y: 504}
   ports:
     keys:
     - childs

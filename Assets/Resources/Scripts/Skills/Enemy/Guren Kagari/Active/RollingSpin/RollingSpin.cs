@@ -34,6 +34,8 @@ public class RollingSpin : SkillBase
 
         var dangerAreaCom = dangerArea.GetComponent<DangerArea>();
 
+        var targetPos = targetPlayer.transform.position;
+
         dangerAreaCom.Activate(delayTime, () =>
         {
             GameObject hitBox = LocalGameManager.instance.objectPoolManager.poolDic["HitBox"].GetGo("HitBox");
@@ -63,19 +65,15 @@ public class RollingSpin : SkillBase
             hitBox.transform.SetParent(null);
             effect.transform.SetParent(null);
 
-            LocalGameManager.instance.coroutineRunner.StartCoroutine(ReturnRigid(caster, targetPlayer.transform.position));
+            dangerArea.transform.parent.rotation = Quaternion.Euler(0, 0, 0);
+            LocalGameManager.instance.coroutineRunner.StartCoroutine(MoveToTarget(caster, targetPos));
         });
 
         return true;
     }
 
-    private IEnumerator ReturnRigid(ISkillCaster caster, Vector2 targetPos)
+    private IEnumerator MoveToTarget(ISkillCaster caster, Vector2 targetPos)
     {
-        //float duration = caster.GetCom<Animator>().GetCurrentAnimatorStateInfo(0).length;
-        //yield return new WaitForSeconds(duration);
-
-        //caster.GetGameObject().transform.DOMove(targetPos, 1f);
-
         caster.GetCom<Rigidbody2D>().DOMove(targetPos, .1f).Elapsed();
         caster.GetCom<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
 

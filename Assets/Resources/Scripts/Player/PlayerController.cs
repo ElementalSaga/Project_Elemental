@@ -136,14 +136,16 @@ public class PlayerController : MonoBehaviour, IDataInitializeable, IControllabl
     {
         if (curState == UnitState.Attacking)
         {
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-            {
-                curState = UnitState.Idle;
-                moveInput?.Invoke(moveX);
-            }
+            Debug.Log("힝홍힝");
+            // if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            // {
+            //     curState = UnitState.Idle;
+            //     moveInput?.Invoke(moveX);
+            // }
         }
         else // 공격 중이 아닐 때
         {
+
             if (moveX.x != 0)
             {
                 curState = UnitState.Moving;
@@ -194,9 +196,8 @@ public class PlayerController : MonoBehaviour, IDataInitializeable, IControllabl
         {
             if (attack.PerformSkill(skill))
             {
-                //Debug.Log("할렐루야");
-                curState = UnitState.Attacking;
-                moveInput?.Invoke(Vector2.zero);
+                Debug.Log("할렐루야");
+                StartCoroutine(AttackRoutine(skill.Duration));
             }
             else return;
         }
@@ -204,7 +205,7 @@ public class PlayerController : MonoBehaviour, IDataInitializeable, IControllabl
         {
             if (attack.PerformSkill(skill))
             {
-                curState = UnitState.Attacking;
+                //curState = UnitState.Attacking;
                 moveInput?.Invoke(Vector2.zero);
                 if (continuousSkill != null) StopCoroutine(continuousSkill);
                 continuousSkill = StartCoroutine(SkillRoutine(skill, attNum));
@@ -259,12 +260,17 @@ public class PlayerController : MonoBehaviour, IDataInitializeable, IControllabl
         {
             if (attack.PerformSkill(skill))
             {
-                curState = UnitState.Attacking;
-                yield return null;
-                yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"));
-                curState = UnitState.Idle;
+                StartCoroutine(AttackRoutine(skill.Duration));
             }
             yield return new WaitForSeconds(.1f);
         }
+    }
+
+    private IEnumerator AttackRoutine(float duration)
+    {
+        curState = UnitState.Attacking;
+        moveInput?.Invoke(Vector2.zero);
+        yield return new WaitForSeconds(duration);
+        curState = UnitState.Idle;
     }
 }

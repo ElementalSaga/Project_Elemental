@@ -13,6 +13,7 @@ public class Skill_Module : ScriptableObject
     [SerializeField] private string skillDetail; //최종 스킬의 상세 설명
     public float coolDown; //최종 스킬의 쿨타임
     public int consumption;
+    [SerializeField] private float duration; //사용한 스킬의 공격 상태 지속 시간.
 
     private float remainingCoolDown; //남은 쿨타임
     [SerializeField] private bool basicAttack; //기본 공격 모듈이지 체크.
@@ -20,6 +21,7 @@ public class Skill_Module : ScriptableObject
     [SerializeField] private bool cancleDelay; //기본 공격의 후딜레이를 캔슬하고 작동하는 스킬 체크
     [SerializeField] private bool havePassive; //기본 지속 효과를 가지고 있는지 여부 체크
     [SerializeField] private bool canUseAirial; //공중에서 사용이 가능한지의 여부 체크
+
 
     [SerializeField] private List<SkillBase> activeSkills = new List<SkillBase>(); //이 스킬을 실행할 때 같이 실행되는 액티브 스킬들.
     [SerializeField] private List<SkillBase> passiveSkills = new List<SkillBase>(); //이 스킬을 착용하고 있을 때 발동하는 패시브 스킬들.
@@ -35,6 +37,7 @@ public class Skill_Module : ScriptableObject
     public bool HavePassive => havePassive;
     public bool CanUseAirial => canUseAirial;
     public bool BasicAttack => basicAttack;
+    public float Duration => duration;
 
     public List<SkillBase> ReleaseSkills => releaseSkills;
     #endregion EndProperty
