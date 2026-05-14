@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CrushBlow", menuName = "ScriptableObject/Skills/Active/YeonHaRyeon/CrushBlow")]
@@ -41,26 +42,28 @@ public class CrushBlow : SkillBase
                 _ => ""
             };
 
-            GameObject hitBox = LocalGameManager.instance.objectPoolManager.poolDic["HitBox"].GetGo("HitBox");
-
-            hitBox.transform.position = caster.GetHitBoxPos().position;
-            hitBox.transform.SetParent(caster.GetGameObject().transform.GetChild(2).transform.GetChild(0));
-
-            HitBox hitBoxCom = hitBox.GetComponent<HitBox>();
-
-            hitBox.tag = caster.GetGameObject().tag;
-
-            var hitBoxCol = hitBoxCom.GetComponent<BoxCollider2D>();
-
-            hitBoxCol.size = hitBoxSize;
-            hitBoxCol.offset = hitBoxOffset;
-
-            hitBoxCom.Initialize(dmgCalculater.Calculate(caster), stunDmg, caster, null, .15f);
-
             caster.PlayAnimation(animName);
+            caster.GetCom<Rigidbody2D>().DOMoveX(caster.GetGameObject().transform.position.x + 2f, .1f).SetEase(Ease.Linear).OnComplete(() =>
+            {
+                GameObject hitBox = LocalGameManager.instance.objectPoolManager.poolDic["HitBox"].GetGo("HitBox");
 
-            count++;
-            yield return new WaitForSeconds(.15f);
+                hitBox.transform.position = caster.GetHitBoxPos().position;
+                hitBox.transform.SetParent(caster.GetGameObject().transform.GetChild(2).transform.GetChild(0));
+
+                HitBox hitBoxCom = hitBox.GetComponent<HitBox>();
+
+                hitBox.tag = caster.GetGameObject().tag;
+
+                var hitBoxCol = hitBoxCom.GetComponent<BoxCollider2D>();
+
+                hitBoxCol.size = hitBoxSize;
+                hitBoxCol.offset = hitBoxOffset;
+
+                hitBoxCom.Initialize(dmgCalculater.Calculate(caster), stunDmg, caster, null, .15f);
+                count++;
+            });
+
+            yield return new WaitForSeconds(.25f);
         }
 
         heatSeal.heatSeal = 0;

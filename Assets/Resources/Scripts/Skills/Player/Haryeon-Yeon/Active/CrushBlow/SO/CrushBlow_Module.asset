@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: 
   skillDetail: 
-  coolDown: 2.25
+  coolDown: 1
   consumption: 30
+  duration: 1
   basicAttack: 0
   attackable: 1
   cancleDelay: 0
@@ -24,4 +25,5 @@ MonoBehaviour:
   activeSkills:
   - {fileID: 11400000, guid: d4cd74ac13449084e8c743d4dab6b1ba, type: 2}
   passiveSkills: []
+  releaseSkills: []
   activeType: 0
