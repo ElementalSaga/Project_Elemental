@@ -43,7 +43,7 @@ public class CrushBlow : SkillBase
             };
 
             caster.PlayAnimation(animName);
-            caster.GetCom<Rigidbody2D>().DOMoveX(caster.GetGameObject().transform.position.x + 2f, .1f).SetEase(Ease.Linear).OnComplete(() =>
+            caster.GetCom<Rigidbody2D>().DOMoveX(caster.GetGameObject().transform.position.x + (2f * caster.GetDirection().x), .1f).SetEase(Ease.Linear).OnComplete(() =>
             {
                 GameObject hitBox = LocalGameManager.instance.objectPoolManager.poolDic["HitBox"].GetGo("HitBox");
 
@@ -54,10 +54,13 @@ public class CrushBlow : SkillBase
 
                 hitBox.tag = caster.GetGameObject().tag;
 
-                var hitBoxCol = hitBoxCom.GetComponent<BoxCollider2D>();
+                hitBox.transform.localScale = hitBoxSize;
+                hitBox.transform.localPosition = hitBoxOffset;
 
-                hitBoxCol.size = hitBoxSize;
-                hitBoxCol.offset = hitBoxOffset;
+                //var hitBoxCol = hitBoxCom.GetComponent<BoxCollider2D>();
+
+                //hitBoxCol.size = hitBoxSize;
+                //hitBoxCol.offset = hitBoxOffset;
 
                 hitBoxCom.Initialize(dmgCalculater.Calculate(caster), stunDmg, caster, null, .15f);
                 count++;

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: HeatSeal
   m_EditorClassIdentifier: 
   dmgCalculater: {fileID: 0}
+  stunDmg: 0
   targetObj: {fileID: 0}
   animName: 
   explanation: 
-  heatSeal: 0
+  heatSeal: 3
