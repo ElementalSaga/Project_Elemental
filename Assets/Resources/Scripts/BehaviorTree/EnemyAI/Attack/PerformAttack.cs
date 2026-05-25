@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateNodeMenu("BT/Action/PerformAttack")]
 public class PerformAttack : BTNode
 {
     public int SkillNum;

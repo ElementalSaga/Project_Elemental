@@ -2,7 +2,7 @@ using System;
 using System.Reflection;
 using UnityEngine;
 
-[CreateNodeMenu("BT/Action/SetBlackboardValue")]
+[CreateNodeMenu("BT/SetBlackboardValue")]
 public class SetBlackboardValueNode : BTNode
 {
     public enum ValueSource { Constant, Blackboard, UnitProperty }

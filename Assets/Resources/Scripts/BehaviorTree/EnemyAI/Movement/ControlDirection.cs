@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateNodeMenu("BT/ControlDirection")]
 public class ControlDirection : BTNode
 {
     [Header("블랙보드 키")]

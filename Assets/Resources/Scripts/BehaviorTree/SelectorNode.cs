@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
+[CreateNodeMenu("BT/SelectorNode")]
 public class SelectorNode : BTNode
 {
     [Output(dynamicPortList = true)] public List<BTNode> childs;

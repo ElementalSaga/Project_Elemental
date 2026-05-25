@@ -2,6 +2,7 @@ using System;
 using System.Reflection;
 using UnityEngine;
 
+[CreateNodeMenu("BT/ConditionNode")]
 public class ConditionNode : BTNode
 {
     public enum ValueSource { Constant, Blackboard, UnitProperty, AIState }

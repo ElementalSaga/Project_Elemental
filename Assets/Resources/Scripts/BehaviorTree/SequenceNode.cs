@@ -4,6 +4,7 @@ using UnityEngine;
 using XNode;
 using System.Linq;
 
+[CreateNodeMenu("BT/SequenceNode")]
 public class SequenceNode : BTNode
 {
     [Output(dynamicPortList = true)] public List<BTNode> childs;

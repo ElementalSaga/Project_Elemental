@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[CreateNodeMenu("BT/Action/ClosingGap")]
 public class ClosingGap : BTNode
 {
     private bool isSuccess = false;

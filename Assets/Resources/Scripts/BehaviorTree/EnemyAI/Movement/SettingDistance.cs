@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateNodeMenu("BT/SettingDistance")]
 public class SettingDistance : BTNode
 {
     Vector3 unitPos;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
+[CreateNodeMenu("BT/WeightSelectorNode")]
 public class WeightSelectorNode : BTNode
 {
     [Output(dynamicPortList = true)] public List<float> WeightList;

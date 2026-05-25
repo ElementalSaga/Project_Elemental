@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateNodeMenu("BT/Action/AttackDelay")]
 public class AttackDelay : BTNode
 {
     public float minDuration;
