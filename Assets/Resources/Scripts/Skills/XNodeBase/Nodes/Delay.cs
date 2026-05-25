@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateNodeMenu("Skill/Delay")]
 public class Delay : SkillNode
 {
+    [Output(dynamicPortList = true)] public List<SkillNode> childs;
     public float delayTime;
 
     public override void Evaluate(ISkillCaster caster)
