@@ -93,7 +93,7 @@ MonoBehaviour:
   size: {x: 5, y: 1}
   pos: {x: 0, y: 0}
   weight: 1.11
-  angle: {x: 0, y: 0, z: 0, w: 0}
+  angle: {x: 0, y: 0, z: -0.3771215, w: 0.9261638}
   chaseCaster: 0
 --- !u!114 &-8589886137386630947
 MonoBehaviour:
@@ -151,7 +151,8 @@ MonoBehaviour:
   parent: {fileID: 0}
   targetTypeX: 1
   targetTypeY: 0
-  rate: 0.5
+  rateX: 0.5
+  rateY: 0
   target: {x: 0, y: 5}
   output: {x: 0, y: 0}
 --- !u!114 &-8248233015688448312
@@ -461,7 +462,7 @@ MonoBehaviour:
   moveTypeY: 1
   durationX: 0.1
   durationY: 0.1
-  destination: {x: 3.05, y: -2.3686967}
+  destination: {x: 3.05, y: 2.614976}
 --- !u!114 &6435466500785613101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,7 +547,7 @@ MonoBehaviour:
   moveTypeY: 6
   durationX: 0.75
   durationY: 0.75
-  destination: {x: -2.0549998, y: 2.6149747}
+  destination: {x: -2.0549998, y: 2.614976}
 --- !u!114 &7606832760947749646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,7 +604,8 @@ MonoBehaviour:
   parent: {fileID: 0}
   targetTypeX: 1
   targetTypeY: 1
-  rate: 1
+  rateX: 1
+  rateY: 1
   target: {x: 0, y: 0}
   output: {x: 0, y: 0}
 --- !u!114 &9037192830472195921
@@ -740,6 +742,6 @@ MonoBehaviour:
   delayTime: 1
   dangerAreaSize: {x: 5, y: 1}
   dangerAreaPos: {x: 0, y: 0}
-  dangerAreaAngle: {x: 0, y: 0, z: 0, w: 0}
+  dangerAreaAngle: {x: 0, y: 0, z: -0.3771215, w: 0.9261638}
   targeting: 1
   autoLength: 1

@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateNodeMenu("Skill/Repeat")]
 public class Repeat : SkillNode
 {
+    [Output(dynamicPortList = true)] public List<SkillNode> childs;
+    [Output(dynamicPortList = true)] public List<SkillNode> afterRepeatNode;
     public int repeatTime;
 
     public override void Evaluate(ISkillCaster caster)
@@ -14,8 +16,26 @@ public class Repeat : SkillNode
         {
             foreach (var port in DynamicOutputs)
             {
-                var child = port.Connection.node as SkillNode;
-                child.Evaluate(caster);
+                if (port.fieldName.StartsWith("childs "))
+                {
+                    if (port.IsConnected)
+                    {
+                        var child = port.Connection.node as SkillNode;
+                        child.Evaluate(caster);
+                    }
+                }
+            }
+        }
+
+        foreach (var port in DynamicOutputs)
+        {
+            if (port.fieldName.StartsWith("afterRepeatNode "))
+            {
+                if (port.IsConnected)
+                {
+                    var child = port.Connection.node as SkillNode;
+                    child.Evaluate(caster);
+                }
             }
         }
     }

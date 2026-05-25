@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Set Hit Box
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 472, y: -120}
+  position: {x: 488, y: -152}
   ports:
     keys:
     - size
@@ -28,8 +28,8 @@ MonoBehaviour:
       _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: output
-        node: {fileID: 5626046836473857069}
+      - fieldName: dangerAreaSizeOutput
+        node: {fileID: -8855325076909325008}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -40,8 +40,8 @@ MonoBehaviour:
       _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: output
-        node: {fileID: 5626046836473857069}
+      - fieldName: dangerAreaPosOutput
+        node: {fileID: -8855325076909325008}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -122,6 +122,8 @@ MonoBehaviour:
     - dangerAreaSize
     - dangerAreaPos
     - dangerAreaAngle
+    - dangerAreaSizeOutput
+    - dangerAreaPosOutput
     values:
     - _fieldName: childs
       _node: {fileID: -8855325076909325008}
@@ -208,6 +210,36 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: dangerAreaSizeOutput
+      _node: {fileID: -8855325076909325008}
+      _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: size
+        node: {fileID: -9138293557624033217}
+        reroutePoints: []
+      - fieldName: size
+        node: {fileID: 5284994583342059419}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: dangerAreaPosOutput
+      _node: {fileID: -8855325076909325008}
+      _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: pos
+        node: {fileID: 5284994583342059419}
+        reroutePoints: []
+      - fieldName: pos
+        node: {fileID: -9138293557624033217}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   parent: {fileID: 0}
   childs:
   - {fileID: 0}
@@ -215,6 +247,8 @@ MonoBehaviour:
   delayTime: 1
   dangerAreaSize: {x: 6, y: 1}
   dangerAreaPos: {x: 0.5, y: 0}
+  dangerAreaSizeOutput: {x: 0, y: 0}
+  dangerAreaPosOutput: {x: 0, y: 0}
   dangerAreaAngle: {x: 0, y: 0, z: 0, w: 0}
   targeting: 0
   autoLength: 0
@@ -275,7 +309,6 @@ MonoBehaviour:
   nodes:
   - {fileID: -8855325076909325008}
   - {fileID: 6947532641002159496}
-  - {fileID: 5626046836473857069}
   - {fileID: 5284994583342059419}
   - {fileID: -9138293557624033217}
   - {fileID: 887897933175214044}
@@ -350,8 +383,8 @@ MonoBehaviour:
       _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: output
-        node: {fileID: 5626046836473857069}
+      - fieldName: dangerAreaSizeOutput
+        node: {fileID: -8855325076909325008}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -362,8 +395,8 @@ MonoBehaviour:
       _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: output
-        node: {fileID: 5626046836473857069}
+      - fieldName: dangerAreaPosOutput
+        node: {fileID: -8855325076909325008}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -393,58 +426,6 @@ MonoBehaviour:
   parent: {fileID: 0}
   size: {x: 1, y: 1}
   pos: {x: 1, y: 1}
---- !u!114 &5626046836473857069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abf6b1ea4f1b2f449ad70109ce9f1bbc, type: 3}
-  m_Name: Vector 2
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 40, y: 376}
-  ports:
-    keys:
-    - output
-    - parent
-    values:
-    - _fieldName: output
-      _node: {fileID: 5626046836473857069}
-      _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: pos
-        node: {fileID: 5284994583342059419}
-        reroutePoints: []
-      - fieldName: size
-        node: {fileID: 5284994583342059419}
-        reroutePoints: []
-      - fieldName: size
-        node: {fileID: -9138293557624033217}
-        reroutePoints: []
-      - fieldName: pos
-        node: {fileID: -9138293557624033217}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: parent
-      _node: {fileID: 5626046836473857069}
-      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  parent: {fileID: 0}
-  value: {x: 1, y: 1}
-  output: {x: 0, y: 0}
 --- !u!114 &6947532641002159496
 MonoBehaviour:
   m_ObjectHideFlags: 0

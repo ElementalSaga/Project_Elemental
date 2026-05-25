@@ -15,6 +15,8 @@ public class SetDangerArea : SkillNode
 	[Header("경고 박스 크기 및 위치와 각도")]
 	[Input] public Vector2 dangerAreaSize;
 	[Input] public Vector2 dangerAreaPos;
+	[Output] public Vector2 dangerAreaSizeOutput;
+	[Output] public Vector2 dangerAreaPosOutput;
 	[Output] public Quaternion dangerAreaAngle;
 
 	[Header("플레이어 위치에 따라 각도가 변화하는지 여부.")]
@@ -81,6 +83,8 @@ public class SetDangerArea : SkillNode
 	public override object GetValue(NodePort port)
 	{
 		if (port.fieldName == "dangerAreaAngle") return dangerAreaAngle;
+		if (port.fieldName == "dangerAreaSizeOutput") return dangerAreaSize;
+		if (port.fieldName == "dangerAreaPosOutput") return dangerAreaPos;
 		return null;
 	}
 }
