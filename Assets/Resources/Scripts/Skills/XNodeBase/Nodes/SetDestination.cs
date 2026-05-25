@@ -12,7 +12,8 @@ public class SetDestination : SkillNode
     [Header("목적지 타입 (개발자 지정 / 플레이어)")]
     public TargetingType targetTypeX;
     public TargetingType targetTypeY;
-    public float rate;
+    public float rateX;
+    public float rateY;
     public Vector2 target;
 
     private Vector2 value;
@@ -26,7 +27,7 @@ public class SetDestination : SkillNode
         switch (targetTypeX)
         {
             case TargetingType.Player:
-                x = Mathf.Lerp(caster.GetPosition().x, LocalGameManager.instance.unitManager.PlayerUnit.gameObject.transform.position.x, rate);
+                x = Mathf.Lerp(caster.GetPosition().x, LocalGameManager.instance.unitManager.PlayerUnit.gameObject.transform.position.x, rateX);
                 break;
 
             case TargetingType.Variable:
@@ -37,7 +38,7 @@ public class SetDestination : SkillNode
         switch (targetTypeY)
         {
             case TargetingType.Player:
-                y = Mathf.Lerp(caster.GetPosition().y, LocalGameManager.instance.unitManager.PlayerUnit.gameObject.transform.position.y, rate);
+                y = Mathf.Lerp(caster.GetPosition().y, LocalGameManager.instance.unitManager.PlayerUnit.gameObject.transform.position.y, rateY);
                 break;
 
             case TargetingType.Variable:
