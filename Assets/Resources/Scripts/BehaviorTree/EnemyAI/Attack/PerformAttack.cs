@@ -42,12 +42,24 @@ public class PerformAttack : BTNode
         if (skill.OnCoolDown) return NodeState.Failure;
         if (controller.curState == AIController.UnitState.Attacking) return NodeState.Running;
 
-        controller.curState = AIController.UnitState.Attacking;
+        //Debug.Log($"공격함 : {skill.name}");
+        if (controller.attack.PerformSkill(skill))
+        {
+            controller.StartCoroutine(AttackRoutine(controller, skill.Duration));
+        }
 
-        controller.attack.PerformSkill(skill);
+
         isExecuting = true;
 
         return NodeState.Running;
+    }
+
+    private IEnumerator AttackRoutine(AIController controller, float duration)
+    {
+        controller.curState = AIController.UnitState.Attacking;
+        controller.StopMovement();
+        yield return new WaitForSeconds(duration);
+        controller.curState = AIController.UnitState.Idle;
     }
 
     public override bool CanExecute(AIController controller) //노드가 실행 가능한 상태인지 체크 True = 실행가능 False = 실행 불가능.

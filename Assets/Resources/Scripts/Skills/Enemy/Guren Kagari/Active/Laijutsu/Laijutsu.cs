@@ -11,7 +11,7 @@ public class Laijutsu : SkillBase
 
     public override bool UseSkill(ISkillCaster caster)
     {
-        //Debug.Log("발도 준비");
+        Debug.Log("발도 준비");
         GameObject dangerArea = LocalGameManager.instance.objectPoolManager.poolDic["DangerArea"].GetGo("DangerAreaX");
 
         dangerArea.transform.SetParent(caster.GetGameObject().transform.GetChild(2).transform.GetChild(0));

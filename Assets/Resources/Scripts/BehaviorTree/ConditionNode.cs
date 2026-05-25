@@ -26,7 +26,6 @@ public class ConditionNode : BTNode
 
     public override NodeState Evaluate(AIController controller)
     {
-        Debug.Log("호놀룰루");
         object leftVal = GetValue(leftSource, leftKey, controller);
         object rightVal = GetValue(rightSource, rightKey, controller);
 

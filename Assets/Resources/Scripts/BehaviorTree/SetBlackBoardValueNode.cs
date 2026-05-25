@@ -38,7 +38,7 @@ public class SetBlackboardValueNode : BTNode
                 case ValueType.Int:
                     int currentInt = blackboard.Get<int>(targetKey);
                     int srcInt = Convert.ToInt32(sourceVal);
-                    Debug.Log(CalculateInt(currentInt, srcInt));
+                    //Debug.Log(CalculateInt(currentInt, srcInt));
                     blackboard.Set(targetKey, CalculateInt(currentInt, srcInt));
                     break;
 

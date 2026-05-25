@@ -31,9 +31,9 @@ public class LocalGameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            dialogueManager.dialogueRunner.RunDialogue();
-        }
+        // if (Input.GetKeyDown(KeyCode.Q))
+        // {
+        //     dialogueManager.dialogueRunner.RunDialogue();
+        // }
     }
 }

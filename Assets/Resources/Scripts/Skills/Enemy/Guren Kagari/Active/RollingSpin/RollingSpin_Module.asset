@@ -16,6 +16,7 @@ MonoBehaviour:
   skillDetail: 
   coolDown: 0
   consumption: 0
+  duration: 1
   basicAttack: 0
   attackable: 0
   cancleDelay: 0

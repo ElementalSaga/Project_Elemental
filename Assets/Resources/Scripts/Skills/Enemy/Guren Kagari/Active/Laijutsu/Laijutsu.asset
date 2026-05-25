@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06d06b7f111387445b04bde34307b29a, type: 3}
   m_Name: Laijutsu
   m_EditorClassIdentifier: 
-  dmgCalculater: {fileID: 0}
+  dmgCalculater: {fileID: 11400000, guid: 3e507d4a52006de4c91caff3f0bf7f58, type: 2}
   stunDmg: 0
   targetObj: {fileID: 0}
   animName: 
   explanation: 
   delayTime: 0.75
-  actionSkill: {fileID: 11400000, guid: d3afaed28ab051c49baf7a78c658e4f0, type: 2}
   dangerAreaSize: {x: 6, y: 1}
   dangerAreaPos: {x: 0.5, y: 0}

@@ -1,0 +1,745 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8898739618691481559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcce7a471ee3d2f4e8cacb99c0b56e37, type: 3}
+  m_Name: Set Hit Box
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 856, y: -216}
+  ports:
+    keys:
+    - size
+    - pos
+    - weight
+    - parent
+    - parent 0
+    - angle
+    values:
+    - _fieldName: size
+      _node: {fileID: -8898739618691481559}
+      _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: -8248233015688448312}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: pos
+      _node: {fileID: -8898739618691481559}
+      _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: weight
+      _node: {fileID: -8898739618691481559}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: output
+        node: {fileID: -2720774018093810653}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: -8898739618691481559}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent 0
+      _node: {fileID: -8898739618691481559}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: childs 0
+        node: {fileID: 9037192830472195921}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: angle
+      _node: {fileID: -8898739618691481559}
+      _typeQualifiedName: UnityEngine.Quaternion, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: dangerAreaAngle
+        node: {fileID: 9037192830472195921}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  parent: {fileID: 0}
+  size: {x: 5, y: 1}
+  pos: {x: 0, y: 0}
+  weight: 1.11
+  angle: {x: 0, y: 0, z: 0, w: 0}
+  chaseCaster: 0
+--- !u!114 &-8589886137386630947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848287259573d0640b2283b41f81a359, type: 3}
+  m_Name: Set Destination
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -136, y: -296}
+  ports:
+    keys:
+    - output
+    - parent
+    - parent 0
+    values:
+    - _fieldName: output
+      _node: {fileID: -8589886137386630947}
+      _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: destination
+        node: {fileID: 6435466500785613101}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: -8589886137386630947}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent 0
+      _node: {fileID: -8589886137386630947}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: childs 0
+        node: {fileID: -7999444761109820641}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  parent: {fileID: 0}
+  targetTypeX: 1
+  targetTypeY: 0
+  rate: 0.5
+  target: {x: 0, y: 5}
+  output: {x: 0, y: 0}
+--- !u!114 &-8248233015688448312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf6b1ea4f1b2f449ad70109ce9f1bbc, type: 3}
+  m_Name: Vector 2
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 328, y: -296}
+  ports:
+    keys:
+    - output
+    - parent
+    values:
+    - _fieldName: output
+      _node: {fileID: -8248233015688448312}
+      _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: size
+        node: {fileID: -8898739618691481559}
+        reroutePoints: []
+      - fieldName: dangerAreaSize
+        node: {fileID: 9037192830472195921}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: -8248233015688448312}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  parent: {fileID: 0}
+  value: {x: 5, y: 1}
+  output: {x: 0, y: 0}
+--- !u!114 &-7999444761109820641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f063114b8bc00884a8391f4e5c9cbb98, type: 3}
+  m_Name: Skill Root
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -392, y: -168}
+  ports:
+    keys:
+    - childs
+    - parent
+    - childs 0
+    - childs 1
+    values:
+    - _fieldName: childs
+      _node: {fileID: -7999444761109820641}
+      _typeQualifiedName: System.Collections.Generic.List`1[[SkillNode, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: -7999444761109820641}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: childs 0
+      _node: {fileID: -7999444761109820641}
+      _typeQualifiedName: SkillNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: parent 0
+        node: {fileID: -8589886137386630947}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: childs 1
+      _node: {fileID: -7999444761109820641}
+      _typeQualifiedName: SkillNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: parent 0
+        node: {fileID: 6435466500785613101}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  parent: {fileID: 0}
+  childs:
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &-2720774018093810653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80737b15802770f46a40b43c9412805c, type: 3}
+  m_Name: Dmg Calculator
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 616, y: -328}
+  ports:
+    keys:
+    - output
+    - parent
+    values:
+    - _fieldName: output
+      _node: {fileID: -2720774018093810653}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: weight
+        node: {fileID: -8898739618691481559}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: -2720774018093810653}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  parent: {fileID: 0}
+  weight: 1.11
+  output: 0
+--- !u!114 &-1527926649504988938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde7f05f6e895664b90d5d5ad9736b80, type: 3}
+  m_Name: Set Gravity Type
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1262.5957, y: 214.11436}
+  ports:
+    keys:
+    - parent
+    - parent 0
+    values:
+    - _fieldName: parent
+      _node: {fileID: -1527926649504988938}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent 0
+      _node: {fileID: -1527926649504988938}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: childs 0
+        node: {fileID: 2440972958190187189}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  parent: {fileID: 0}
+  _bodyType: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef15021f1e7b0741aff43e8f38e60e9, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -7999444761109820641}
+  - {fileID: 6435466500785613101}
+  - {fileID: 9037192830472195921}
+  - {fileID: -8589886137386630947}
+  - {fileID: 2440972958190187189}
+  - {fileID: -8898739618691481559}
+  - {fileID: -8248233015688448312}
+  - {fileID: -2720774018093810653}
+  - {fileID: 7606832760947749646}
+  - {fileID: -1527926649504988938}
+  rootNode: {fileID: -7999444761109820641}
+--- !u!114 &2440972958190187189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0efc8e4682e7540b70c88f711d77bd, type: 3}
+  m_Name: Unit Move
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1000, y: 88}
+  ports:
+    keys:
+    - childs
+    - destination
+    - parent
+    - parent 0
+    - childs 0
+    values:
+    - _fieldName: childs
+      _node: {fileID: 2440972958190187189}
+      _typeQualifiedName: System.Collections.Generic.List`1[[SkillNode, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: destination
+      _node: {fileID: 2440972958190187189}
+      _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 7606832760947749646}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: 2440972958190187189}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent 0
+      _node: {fileID: 2440972958190187189}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: childs 2
+        node: {fileID: 9037192830472195921}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: childs 0
+      _node: {fileID: 2440972958190187189}
+      _typeQualifiedName: SkillNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: parent 0
+        node: {fileID: -1527926649504988938}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  parent: {fileID: 0}
+  childs:
+  - {fileID: 0}
+  moveTypeX: 1
+  moveTypeY: 1
+  durationX: 0.1
+  durationY: 0.1
+  destination: {x: 3.05, y: -2.3686967}
+--- !u!114 &6435466500785613101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0efc8e4682e7540b70c88f711d77bd, type: 3}
+  m_Name: Unit Move
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 40, y: 56}
+  ports:
+    keys:
+    - childs
+    - parent
+    - parent 0
+    - childs 0
+    - destination
+    values:
+    - _fieldName: childs
+      _node: {fileID: 6435466500785613101}
+      _typeQualifiedName: System.Collections.Generic.List`1[[SkillNode, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: 6435466500785613101}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent 0
+      _node: {fileID: 6435466500785613101}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: childs 1
+        node: {fileID: -7999444761109820641}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: childs 0
+      _node: {fileID: 6435466500785613101}
+      _typeQualifiedName: SkillNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: parent 0
+        node: {fileID: 9037192830472195921}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: destination
+      _node: {fileID: 6435466500785613101}
+      _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: -8589886137386630947}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  parent: {fileID: 0}
+  childs:
+  - {fileID: 0}
+  moveTypeX: 1
+  moveTypeY: 6
+  durationX: 0.75
+  durationY: 0.75
+  destination: {x: -2.0549998, y: 2.6149747}
+--- !u!114 &7606832760947749646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848287259573d0640b2283b41f81a359, type: 3}
+  m_Name: Set Destination
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 712, y: 168}
+  ports:
+    keys:
+    - output
+    - parent
+    - parent 0
+    values:
+    - _fieldName: output
+      _node: {fileID: 7606832760947749646}
+      _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: destination
+        node: {fileID: 2440972958190187189}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: 7606832760947749646}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent 0
+      _node: {fileID: 7606832760947749646}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: childs 1
+        node: {fileID: 9037192830472195921}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  parent: {fileID: 0}
+  targetTypeX: 1
+  targetTypeY: 1
+  rate: 1
+  target: {x: 0, y: 0}
+  output: {x: 0, y: 0}
+--- !u!114 &9037192830472195921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce72f736e57cc6d4bb19dc266b1eba84, type: 3}
+  m_Name: Set Danger Area
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 408, y: -56}
+  ports:
+    keys:
+    - childs
+    - parent
+    - parent 0
+    - childs 0
+    - childs 1
+    - childs 2
+    - dangerAreaSize
+    - dangerAreaPos
+    - dangerAreaAngle
+    values:
+    - _fieldName: childs
+      _node: {fileID: 9037192830472195921}
+      _typeQualifiedName: System.Collections.Generic.List`1[[SkillNode, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: 9037192830472195921}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent 0
+      _node: {fileID: 9037192830472195921}
+      _typeQualifiedName: BTNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: childs 0
+        node: {fileID: 6435466500785613101}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: childs 0
+      _node: {fileID: 9037192830472195921}
+      _typeQualifiedName: SkillNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: parent 0
+        node: {fileID: -8898739618691481559}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: childs 1
+      _node: {fileID: 9037192830472195921}
+      _typeQualifiedName: SkillNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: parent 0
+        node: {fileID: 7606832760947749646}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: childs 2
+      _node: {fileID: 9037192830472195921}
+      _typeQualifiedName: SkillNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: parent 0
+        node: {fileID: 2440972958190187189}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: dangerAreaSize
+      _node: {fileID: 9037192830472195921}
+      _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: -8248233015688448312}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: dangerAreaPos
+      _node: {fileID: 9037192830472195921}
+      _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: dangerAreaAngle
+      _node: {fileID: 9037192830472195921}
+      _typeQualifiedName: UnityEngine.Quaternion, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: angle
+        node: {fileID: -8898739618691481559}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  parent: {fileID: 0}
+  childs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  delayTime: 1
+  dangerAreaSize: {x: 5, y: 1}
+  dangerAreaPos: {x: 0, y: 0}
+  dangerAreaAngle: {x: 0, y: 0, z: 0, w: 0}
+  targeting: 1
+  autoLength: 1

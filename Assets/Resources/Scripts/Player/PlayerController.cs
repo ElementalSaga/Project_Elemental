@@ -29,6 +29,10 @@ public class PlayerController : MonoBehaviour, IDataInitializeable, IControllabl
     private bool isAirial;
     public bool ModifierAtt;
 
+    //test
+    public SkillNodeGraph testSkill;
+    //
+
     public void DataInitialize()
     {
         if (parentObj.GetComponent<PlayableCharacter>().controlState == PlayableCharacter.ControlState.Player)
@@ -56,6 +60,11 @@ public class PlayerController : MonoBehaviour, IDataInitializeable, IControllabl
         //StateActions(curState);
         StateAnimation(curState);
         //Debug.DrawRay(transform.position, Vector2.down * .7f, Color.red, .2f);
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            testSkill.rootNode.Evaluate(attack as ISkillCaster);
+        }
     }
 
     void LateUpdate()

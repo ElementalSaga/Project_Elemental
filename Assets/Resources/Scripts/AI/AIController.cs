@@ -90,6 +90,8 @@ public class AIController : MonoBehaviour, IDataInitializeable, IControllable
     {
         if (curState == UnitState.Attacking)
         {
+            // 공격 상태 관리는 이제 PerformAttack 노드의 코루틴이나 외부 로직에서 명시적인 기간(skill.Duration) 동안 수행됩니다.
+            /*
             if (Time.time - lastStateChangeTime < 0.2f) return;
 
             if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
@@ -98,6 +100,7 @@ public class AIController : MonoBehaviour, IDataInitializeable, IControllable
                 Debug.Log("공격 종료.");
                 CallMoveEvent(Vector2.zero);
             }
+            */
         }
 
         else
@@ -113,5 +116,10 @@ public class AIController : MonoBehaviour, IDataInitializeable, IControllable
                 anim.CrossFade("Run", 0f);
             }
         }
+    }
+
+    public void StopMovement()
+    {
+        moveInput?.Invoke(Vector2.zero);
     }
 }
