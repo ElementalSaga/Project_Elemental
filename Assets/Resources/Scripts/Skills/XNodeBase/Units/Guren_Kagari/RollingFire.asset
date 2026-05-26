@@ -28,8 +28,8 @@ MonoBehaviour:
       _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: output
-        node: {fileID: -8248233015688448312}
+      - fieldName: dangerAreaSizeOutput
+        node: {fileID: 9037192830472195921}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -39,7 +39,10 @@ MonoBehaviour:
       _node: {fileID: -8898739618691481559}
       _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: dangerAreaPosOutput
+        node: {fileID: 9037192830472195921}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -168,7 +171,7 @@ MonoBehaviour:
   m_Name: Vector 2
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 328, y: -296}
+  position: {x: 152, y: -232}
   ports:
     keys:
     - output
@@ -179,9 +182,6 @@ MonoBehaviour:
       _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: size
-        node: {fileID: -8898739618691481559}
-        reroutePoints: []
       - fieldName: dangerAreaSize
         node: {fileID: 9037192830472195921}
         reroutePoints: []
@@ -633,6 +633,8 @@ MonoBehaviour:
     - dangerAreaSize
     - dangerAreaPos
     - dangerAreaAngle
+    - dangerAreaSizeOutput
+    - dangerAreaPosOutput
     values:
     - _fieldName: childs
       _node: {fileID: 9037192830472195921}
@@ -734,6 +736,30 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: dangerAreaSizeOutput
+      _node: {fileID: 9037192830472195921}
+      _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: size
+        node: {fileID: -8898739618691481559}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: dangerAreaPosOutput
+      _node: {fileID: 9037192830472195921}
+      _typeQualifiedName: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: pos
+        node: {fileID: -8898739618691481559}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   parent: {fileID: 0}
   childs:
   - {fileID: 0}
@@ -742,6 +768,8 @@ MonoBehaviour:
   delayTime: 1
   dangerAreaSize: {x: 5, y: 1}
   dangerAreaPos: {x: 0, y: 0}
+  dangerAreaSizeOutput: {x: 0, y: 0}
+  dangerAreaPosOutput: {x: 0, y: 0}
   dangerAreaAngle: {x: 0, y: 0, z: -0.3771215, w: 0.9261638}
   targeting: 1
   autoLength: 1

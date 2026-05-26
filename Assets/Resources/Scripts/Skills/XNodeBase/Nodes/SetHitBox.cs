@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.InputSystem.Layouts;
 
@@ -28,14 +29,24 @@ public class SetHitBox : SkillNode
 
         GameObject hitBox = LocalGameManager.instance.objectPoolManager.poolDic["HitBox"].GetGo("HitBox");
 
-        if (chaseCaster) hitBox.transform.SetParent(caster.GetGameObject().transform.GetChild(2).transform.GetChild(0));
+        hitBox.transform.SetParent(caster.GetGameObject().transform.GetChild(2).transform.GetChild(0));
+
         HitBox hitBoxCom = hitBox.GetComponent<HitBox>();
         hitBox.tag = caster.GetGameObject().tag;
 
         hitBox.transform.localScale = size;
         hitBox.transform.localPosition = pos;
-        hitBox.transform.localRotation = angle;
 
         hitBoxCom.Initialize(totalDmg, 0, caster, null, .15f);
+
+        if (chaseCaster)
+        {
+            hitBox.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+        else
+        {
+            hitBox.transform.SetParent(null);
+            hitBox.transform.localRotation = angle;
+        }
     }
 }

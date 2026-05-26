@@ -54,6 +54,7 @@ public class SetDangerArea : SkillNode
 
 		if (autoLength)
 		{
+			dangerAreaSize.x = dir.magnitude * caster.GetDirection().x;
 			dangerArea.transform.localScale = new Vector2(dir.magnitude * caster.GetDirection().x, dangerAreaSize.y);
 		}
 		else
