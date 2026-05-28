@@ -289,6 +289,7 @@ MonoBehaviour:
     - angle
     - parent
     - parent 0
+    - childs
     values:
     - _fieldName: size
       _node: {fileID: 1251611675965746153}
@@ -356,7 +357,18 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: childs
+      _node: {fileID: 1251611675965746153}
+      _typeQualifiedName: System.Collections.Generic.List`1[[SkillNode, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   parent: {fileID: 0}
+  childs: []
   size: {x: 6, y: 4}
   pos: {x: 0, y: 0}
   weight: 0
@@ -663,8 +675,8 @@ MonoBehaviour:
   moveTypeX: 1
   moveTypeY: 15
   durationX: 0.2
-  durationY: 0.5
-  destination: {x: 13.598545, y: 4.815}
+  durationY: 0.3
+  destination: {x: 0.7331848, y: 1.6150248}
 --- !u!114 &7011690457343702673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,5 +735,5 @@ MonoBehaviour:
   targetTypeY: 0
   rateX: 0
   rateY: 0
-  target: {x: 6, y: 4}
+  target: {x: 9.6, y: 4}
   output: {x: 0, y: 0}
