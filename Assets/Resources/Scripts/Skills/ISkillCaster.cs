@@ -23,6 +23,7 @@ public interface ISkillCaster
     GameObject GetGameObject();
     Transform GetHitBoxPos();
     Transform GetCatchPos(); //잡기할 때 Enemy의 위치.
+    Transform GetAttackPos(); //공격하거나 투사체를 소환할 때의 위치.
 
     T GetCom<T>();
 }

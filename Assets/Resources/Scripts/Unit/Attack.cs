@@ -265,5 +265,10 @@ public class Attack : MonoBehaviour, IAttackable, ISkillCaster, IDataInitializea
         return this.gameObject.transform.GetChild(1).transform;
     }
 
+    public Transform GetAttackPos()
+    {
+        return null;
+    }
+
     public T GetCom<T>() => parentObj.GetComponentInChildren<T>();
 }

@@ -31,7 +31,7 @@ public class SetDestination : SkillNode
                 break;
 
             case TargetingType.Variable:
-                x = caster.GetCom<Transform>().position.x + target.x;
+                x = caster.GetCom<Transform>().position.x + (target.x * caster.GetDirection().x);
                 break;
         }
 

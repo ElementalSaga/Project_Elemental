@@ -35,7 +35,9 @@ public class SetDangerArea : SkillNode
 		var target = LocalGameManager.instance.unitManager.PlayerUnit;
 		GameObject dangerArea = LocalGameManager.instance.objectPoolManager.poolDic["DangerArea"].GetGo("DangerAreaX");
 
-		dir = target.transform.position - caster.GetCom<Transform>().position;
+		var casterTransform = caster.GetCom<Transform>();
+
+		dir = target.transform.position - casterTransform.position;
 		dangerArea.transform.SetParent(caster.GetGameObject().transform.GetChild(2).transform.GetChild(0));
 		dangerArea.transform.localPosition = dangerAreaPos;
 
@@ -55,7 +57,7 @@ public class SetDangerArea : SkillNode
 		if (autoLength)
 		{
 			dangerAreaSize.x = dir.magnitude * caster.GetDirection().x;
-			dangerArea.transform.localScale = new Vector2(dir.magnitude * caster.GetDirection().x, dangerAreaSize.y);
+			dangerArea.transform.localScale = new Vector2(dir.magnitude, dangerAreaSize.y);
 		}
 		else
 		{
@@ -70,8 +72,14 @@ public class SetDangerArea : SkillNode
 			{
 				foreach (var port in DynamicOutputs)
 				{
-					var child = port.Connection.node as SkillNode;
-					child.Evaluate(caster);
+					if (port.fieldName.StartsWith("childs "))
+					{
+						if (port.IsConnected)
+						{
+							var child = port.Connection.node as SkillNode;
+							child.Evaluate(caster);
+						}
+					}
 				}
 			}
 			finally

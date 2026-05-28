@@ -15,8 +15,14 @@ public class Delay : SkillNode
         {
             foreach (var port in DynamicOutputs)
             {
-                var child = port.Connection.node as SkillNode;
-                child.Evaluate(caster);
+                if (port.fieldName.StartsWith("childs "))
+                {
+                    if (port.IsConnected)
+                    {
+                        var child = port.Connection.node as SkillNode;
+                        child.Evaluate(caster);
+                    }
+                }
             }
         });
     }
