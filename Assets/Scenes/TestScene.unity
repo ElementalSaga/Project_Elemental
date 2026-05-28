@@ -10067,7 +10067,7 @@ MonoBehaviour:
   curState: 0
   parentObj: {fileID: 1511970927}
   ModifierAtt: 0
-  testSkill: {fileID: 11400000, guid: a6194b9574146dc4e8063910570275b2, type: 2}
+  testSkill: {fileID: 11400000, guid: 3bb5ee95e39474346913c0cd87694fbf, type: 2}
 --- !u!114 &2083430285
 MonoBehaviour:
   m_ObjectHideFlags: 0
