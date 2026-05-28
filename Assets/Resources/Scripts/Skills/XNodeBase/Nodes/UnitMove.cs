@@ -27,7 +27,7 @@ public class UnitMove : SkillNode
     {
         destination = GetInputValue<Vector2>("destination", this.destination);
 
-        Debug.Log($"목적지 : {destination.y}");
+        Debug.Log($"목적지 : {destination.x}");
 
         caster.GetCom<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         casterTransform = caster.GetCom<Transform>();
@@ -42,8 +42,14 @@ public class UnitMove : SkillNode
             {
                 foreach (var port in DynamicOutputs)
                 {
-                    var child = port.Connection.node as SkillNode;
-                    child.Evaluate(caster);
+                    if (port.fieldName.StartsWith("childs "))
+                    {
+                        if (port.IsConnected)
+                        {
+                            var child = port.Connection.node as SkillNode;
+                            child.Evaluate(caster);
+                        }
+                    }
                 }
             }
             finally

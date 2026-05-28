@@ -7,6 +7,8 @@ using UnityEngine.InputSystem.Layouts;
 [CreateNodeMenu("Skill/SetHitBox")]
 public class SetHitBox : SkillNode
 {
+    [Output(dynamicPortList = true)] public List<SkillNode> childs;
+
     [Input] public Vector2 size;
     [Input] public Vector2 pos;
 
@@ -47,6 +49,18 @@ public class SetHitBox : SkillNode
         {
             hitBox.transform.SetParent(null);
             hitBox.transform.localRotation = angle;
+        }
+
+        foreach (var port in DynamicOutputs)
+        {
+            if (port.fieldName.StartsWith("childs "))
+            {
+                if (port.IsConnected)
+                {
+                    var child = port.Connection.node as SkillNode;
+                    child.Evaluate(caster);
+                }
+            }
         }
     }
 }
