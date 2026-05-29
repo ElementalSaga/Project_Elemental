@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Set Hit Box
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 856, y: -216}
+  position: {x: 856, y: -296}
   ports:
     keys:
     - size
@@ -22,6 +22,7 @@ MonoBehaviour:
     - parent
     - parent 0
     - angle
+    - childs
     values:
     - _fieldName: size
       _node: {fileID: -8898739618691481559}
@@ -92,11 +93,23 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: childs
+      _node: {fileID: -8898739618691481559}
+      _typeQualifiedName: System.Collections.Generic.List`1[[SkillNode, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   parent: {fileID: 0}
-  size: {x: 5, y: 1}
+  childs: []
+  duration: 1
+  size: {x: 1.4556849, y: 1}
   pos: {x: 0, y: 0}
   weight: 1.11
-  angle: {x: 0, y: 0, z: -0.3771215, w: 0.9261638}
+  angle: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
   chaseCaster: 0
 --- !u!114 &-8589886137386630947
 MonoBehaviour:
@@ -462,7 +475,7 @@ MonoBehaviour:
   moveTypeY: 1
   durationX: 0.1
   durationY: 0.1
-  destination: {x: 3.05, y: 2.614976}
+  destination: {x: 3.05, y: -2.3686562}
 --- !u!114 &6435466500785613101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -547,7 +560,7 @@ MonoBehaviour:
   moveTypeY: 6
   durationX: 0.75
   durationY: 0.75
-  destination: {x: -2.0549998, y: 2.614976}
+  destination: {x: 3.05, y: 2.6150289}
 --- !u!114 &7606832760947749646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,10 +779,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   delayTime: 1
-  dangerAreaSize: {x: 5, y: 1}
+  dangerAreaSize: {x: 1.4556849, y: 1}
   dangerAreaPos: {x: 0, y: 0}
   dangerAreaSizeOutput: {x: 0, y: 0}
   dangerAreaPosOutput: {x: 0, y: 0}
-  dangerAreaAngle: {x: 0, y: 0, z: -0.3771215, w: 0.9261638}
+  dangerAreaAngle: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
   targeting: 1
   autoLength: 1
