@@ -9,6 +9,9 @@ public class SetHitBox : SkillNode
 {
     [Output(dynamicPortList = true)] public List<SkillNode> childs;
 
+    [Header("판정 지속 시간")]
+    public float duration;
+
     [Input] public Vector2 size;
     [Input] public Vector2 pos;
 
@@ -25,8 +28,6 @@ public class SetHitBox : SkillNode
         weight = GetInputValue<float>("weight", this.weight);
         angle = GetInputValue<Quaternion>("angle", this.angle);
 
-        Debug.Log(angle);
-
         int totalDmg = (caster.GetAttackPower() + (int)(caster.GetAttackPower() * weight)) + (int)((caster.GetAttackPower() + (int)(caster.GetAttackPower() * weight)) * (caster.GetGiveDmgRate() / 100f));
 
         GameObject hitBox = LocalGameManager.instance.objectPoolManager.poolDic["HitBox"].GetGo("HitBox");
@@ -39,17 +40,14 @@ public class SetHitBox : SkillNode
         hitBox.transform.localScale = size;
         hitBox.transform.localPosition = pos;
 
-        hitBoxCom.Initialize(totalDmg, 0, caster, null, .15f);
+        hitBox.transform.rotation = angle;
 
-        if (chaseCaster)
-        {
-            hitBox.transform.localRotation = Quaternion.Euler(0, 0, 0);
-        }
-        else
+        if (!chaseCaster) //히트박스가 캐스터 움직임을 따라가지 않을 때.
         {
             hitBox.transform.SetParent(null);
-            hitBox.transform.localRotation = angle;
         }
+
+        hitBoxCom.Initialize(totalDmg, 0, caster, null, duration);
 
         foreach (var port in DynamicOutputs)
         {
