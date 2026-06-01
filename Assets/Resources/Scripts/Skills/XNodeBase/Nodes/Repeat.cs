@@ -6,7 +6,7 @@ using UnityEngine;
 public class Repeat : SkillNode
 {
     [Output(dynamicPortList = true)] public List<SkillNode> childs;
-    [Output(dynamicPortList = true)] public List<SkillNode> afterRepeatNode;
+    [Output(dynamicPortList = true)] public List<SkillNode> exitRepeat;
     public int repeatTime;
 
     public override void Evaluate(ISkillCaster caster)
