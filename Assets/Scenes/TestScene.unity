@@ -365,7 +365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 701534314439198343, guid: 5ad2f3352d7a00e4691d481b3eedbe90, type: 3}
       propertyPath: init
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 701534314439198343, guid: 5ad2f3352d7a00e4691d481b3eedbe90, type: 3}
       propertyPath: maps
@@ -401,11 +401,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3365627307396555130, guid: 5ad2f3352d7a00e4691d481b3eedbe90, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.04
+      value: -7.87
       objectReference: {fileID: 0}
     - target: {fileID: 3365627307396555130, guid: 5ad2f3352d7a00e4691d481b3eedbe90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.29
+      value: -4.74
       objectReference: {fileID: 0}
     - target: {fileID: 3365627307396555130, guid: 5ad2f3352d7a00e4691d481b3eedbe90, type: 3}
       propertyPath: m_LocalPosition.z
@@ -461,7 +461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3849367877708854717, guid: 5ad2f3352d7a00e4691d481b3eedbe90, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4198143601058091659, guid: 5ad2f3352d7a00e4691d481b3eedbe90, type: 3}
       propertyPath: m_IsActive
@@ -3753,7 +3753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &600871016
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6859,7 +6859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1324509607
 Animator:
   serializedVersion: 5
@@ -7055,7 +7055,7 @@ Transform:
   m_GameObject: {fileID: 1324509606}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.05, y: -1.08, z: 0}
+  m_LocalPosition: {x: -4.06, y: -4.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8391,7 +8391,7 @@ PrefabInstance:
     - target: {fileID: 8780345891033524001, guid: eafcfef933583e14d972eb018e4e6bf7, type: 3}
       propertyPath: PlayerUnit
       value: 
-      objectReference: {fileID: 1324509608}
+      objectReference: {fileID: 1511970932}
     - target: {fileID: 8780345891033524001, guid: eafcfef933583e14d972eb018e4e6bf7, type: 3}
       propertyPath: TestTargetUnit
       value: 
@@ -11560,7 +11560,7 @@ MonoBehaviour:
   curState: 0
   parentObj: {fileID: 1511970927}
   ModifierAtt: 0
-  testSkill: {fileID: 11400000, guid: 901d2771e7c8c8f499956b95f6f427ab, type: 2}
+  testSkill: {fileID: 11400000, guid: a6194b9574146dc4e8063910570275b2, type: 2}
 --- !u!114 &2083430285
 MonoBehaviour:
   m_ObjectHideFlags: 0

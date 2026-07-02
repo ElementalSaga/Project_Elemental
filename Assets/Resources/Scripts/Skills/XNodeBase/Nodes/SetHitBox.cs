@@ -28,8 +28,10 @@ public class SetHitBox : SkillNode
         weight = GetInputValue<float>("weight", this.weight);
         angle = GetInputValue<Quaternion>("angle", this.angle);
 
+        //데미지 설정.
         int totalDmg = (caster.GetAttackPower() + (int)(caster.GetAttackPower() * weight)) + (int)((caster.GetAttackPower() + (int)(caster.GetAttackPower() * weight)) * (caster.GetGiveDmgRate() / 100f));
 
+        //히트박스 생성 및 위치, 크기, 각도, 태그 설정.
         GameObject hitBox = LocalGameManager.instance.objectPoolManager.poolDic["HitBox"].GetGo("HitBox");
 
         hitBox.transform.SetParent(caster.GetGameObject().transform.GetChild(2).transform.GetChild(0));
@@ -49,6 +51,7 @@ public class SetHitBox : SkillNode
 
         hitBoxCom.Initialize(totalDmg, 0, caster, null, duration);
 
+        //자식 노드가 존재할 경우 실행.
         foreach (var port in DynamicOutputs)
         {
             if (port.fieldName.StartsWith("childs "))
